@@ -85,13 +85,35 @@ Added to Triggered Alerts
 Email Notification to SOC Team
 
 Status: Enabled
-
-📝 Trigger History
-
 ![Screenshot 2025-05-10 091908](https://github.com/user-attachments/assets/17445dcc-a344-48ad-a9c5-b37d81b564ed)
 
+📝 Summary & Key Takeaways
+---
+This project demonstrated my ability to perform a complete detection lifecycle by:
 
-These patterns are consistent with brute-force attack behavior and would warrant further investigation or immediate response in a real-world security operations center (SOC).
+✅ Simulating Real-World Activity:
+I generated failed login attempts (Event ID 4625) from a simulated attacker machine (Kali Linux) targeting a Windows Server.
+
+✅ Investigating Security Logs:
+I analyzed the collected logs in Splunk, answering critical security questions to understand what happened, who was involved, when it occurred, and how many times it happened.
+
+✅ Identifying Suspicious Behavior:
+I confirmed the activity as malicious, recognizing signs of a brute-force attack targeting the high-privilege Administrator account.
+
+✅ Building a Real-Time Detection Alert:
+I created and tested a real-time Splunk alert to automatically detect similar brute-force attempts in the future, helping security teams respond faster.
+
+🎓 Key Takeaways
+✅ Practiced hands-on security monitoring using Splunk and Windows Event Logs.
+
+✅ Developed the analytical mindset to answer security investigation questions.
+
+✅ Learned how to build and validate detection alerts based on real attack behavior.
+
+✅ Demonstrated awareness of escalation workflows and SOC best practices.
+
+✅ Enhanced my ability to think like a Detection Engineer by automating threat detection.
+
 ---
 ### Skills Learned 
 - SIEM Use Case Development.
