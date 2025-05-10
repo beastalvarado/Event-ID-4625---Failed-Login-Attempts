@@ -27,13 +27,14 @@ To generate real log data, I simulated multiple failed login attempts by using K
 2.Collecting and Analyzing the Logs
 After simulating the activity, I switched to my Ubuntu Server where I have Splunk running to collect and analyze the Windows Event Logs. Using Splunk, I began reviewing the data to answer key security investigation questions.
 ---
+
 🧠 What Happened?
 I used the stats count command to quickly check how many failed login attempts were captured.
   
 🚨This confirmed that 10 failed login events (Event ID 4625) were generated.
 
  ![Screenshot 2025-05-10 075649](https://github.com/user-attachments/assets/da4acfcf-6543-4882-9de4-9483290604c6)
-
+---
 🧠 Who Did It and When Did It Happen?
 I created a table to display the timestamp, source IP address, and source port for each failed login event.
 All attempts originated from the source IP 192.168.1.13, which belongs to my Kali Linux machine. 
@@ -63,21 +64,36 @@ Logon Type: I noticed that the failed logins were using Logon Type 3 (Network Lo
 Failure Reason: The logs provided a failure reason code, indicating that the logins failed due to unknown username or bad password. This further confirms that the attempts were unauthorized.
 
 ![Screenshot 2025-05-10 090244](https://github.com/user-attachments/assets/a94f9175-f45a-4ec1-9ef3-20a8a6aee2a8)
+---
 
+### 🚨 Alert Creation
+After configuring the "Failed Logon Alert - 4625", I successfully tested and triggered the alert based on the simulated failed login attempts.
 
-🧠 Is This Normal or Suspicious?
-Based on the evidence, this activity is suspicious and likely malicious.
+✅ Alert Details:
+Alert Name: Failed Logon Alert - 4625
 
-The high number of failed attempts in a very short timeframe,
+Description: Detects 5 or more failed login attempts from the same Source IP and Account Name within the scheduled search window.
 
-The targeting of the high-privilege "Administrator" account, and he attempts coming from a single external IP address.
+Alert Type: Real-Time
 
-🚨 Alert Creation 
-The alert looks for 5 or more failed login attempts (Event ID 4625) from the same source IP and same account within a defined time range.
+Trigger Condition: Per-Result (≥ 5 failed attempts)
+
+Actions:
+
+Added to Triggered Alerts
+
+Email Notification to SOC Team
+
+Status: Enabled
+
+📝 Trigger History
+
+![Screenshot 2025-05-10 091908](https://github.com/user-attachments/assets/17445dcc-a344-48ad-a9c5-b37d81b564ed)
+
 
 These patterns are consistent with brute-force attack behavior and would warrant further investigation or immediate response in a real-world security operations center (SOC).
 ---
-### Skills Learned
+### Skills Learned 
 - SIEM Use Case Development.
 - Windows Event Log Analysis.
 - Log Collection & Forwarding.
