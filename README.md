@@ -1,7 +1,7 @@
 # EventID-4625 Failed Login Attempts
 ---
 ## Objective
-This project demonstrates how to detect Windows Failed Login Attempts (Event ID 4625) using Splunk. It covers simulating failed logins, collecting logs, and writing SPL queries to identify suspicious activity such as unauthorized access attempts or brute-force attacks. This serves as a practical example of security monitoring in a SIEM environment. I will also create an alert for future failed attempts.
+This project demonstrates how to detect Windows Failed Login Attempts (Event ID 4625) using Splunk. I simulated failed logins, analyzed the logs with SPL, and created a real-time alert to detect repeated login failures. This shows how to apply threat detection in a SIEM environment.
 ---
 ### Tools Used
 -Windows Server / Windows Workstation
@@ -87,32 +87,21 @@ Email Notification to SOC Team
 Status: Enabled
 ![Screenshot 2025-05-10 091908](https://github.com/user-attachments/assets/17445dcc-a344-48ad-a9c5-b37d81b564ed)
 
-📝 Summary & Key Takeaways
----
+## 📝 Summary & Key Takeaways
+
 This project demonstrated my ability to perform a complete detection lifecycle by:
 
-✅ Simulating Real-World Activity:
-I generated failed login attempts (Event ID 4625) from a simulated attacker machine (Kali Linux) targeting a Windows Server.
+- ✅ Simulating failed login attempts (Event ID 4625) using a Kali Linux attacker machine.
+- ✅ Investigating the incident in Splunk using relevant fields such as Account Name, Source IP, and Logon Type.
+- ✅ Confirming that the behavior represented a brute-force attack targeting the Administrator account.
+- ✅ Creating and testing a real-time Splunk alert to detect future occurrences.
 
-✅ Investigating Security Logs:
-I analyzed the collected logs in Splunk, answering critical security questions to understand what happened, who was involved, when it occurred, and how many times it happened.
+### 🎓 Key Takeaways
+- Gained hands-on experience in Windows log analysis and SIEM investigation.
+- Developed SPL skills to search, filter, and correlate events.
+- Practiced SOC-level analytical thinking through question-based investigation.
+- Built an actionable detection rule aligned with real-world brute-force behavior.
 
-✅ Identifying Suspicious Behavior:
-I confirmed the activity as malicious, recognizing signs of a brute-force attack targeting the high-privilege Administrator account.
-
-✅ Building a Real-Time Detection Alert:
-I created and tested a real-time Splunk alert to automatically detect similar brute-force attempts in the future, helping security teams respond faster.
-
-🎓 Key Takeaways
-✅ Practiced hands-on security monitoring using Splunk and Windows Event Logs.
-
-✅ Developed the analytical mindset to answer security investigation questions.
-
-✅ Learned how to build and validate detection alerts based on real attack behavior.
-
-✅ Demonstrated awareness of escalation workflows and SOC best practices.
-
-✅ Enhanced my ability to think like a Detection Engineer by automating threat detection.
 
 ---
 ### Skills Learned 
