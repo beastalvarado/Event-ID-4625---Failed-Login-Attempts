@@ -3,20 +3,6 @@
 ## Objective
 This project demonstrates how to detect Windows Failed Login Attempts (Event ID 4625) using Splunk. I simulated failed logins, analyzed the logs with SPL, and created a real-time alert to detect repeated login failures. This shows how to apply threat detection in a SIEM environment.
 ---
-### Tools Used
--Windows Server / Windows Workstation
-Log source for simulating failed login attempts (Event ID 4625).
-
--Splunk Enterprise / Splunk Free
-Security Information and Event Management (SIEM) platform for log analysis and detection.
-
--NxLog
-Log forwarding agent to send Windows Event Logs to Splunk.
-
--VirtualBox / VMware Workstation
-Virtualization platform to run lab environments.
-
----
 ### Network Diagram 
 
 ![ChatGPT Image May 9, 2025, 05_53_28 PM](https://github.com/user-attachments/assets/398648e4-af32-4dfd-a7b4-78ee83c6e632)
@@ -111,3 +97,15 @@ This project demonstrated my ability to perform a complete detection lifecycle b
 - Security Monitoring & Threat Detection.
 - Splunk Search Processing Language (SPL).
 ---
+### Tools Used
+-Windows Server / Windows Workstation
+Log source for simulating failed login attempts (Event ID 4625).
+
+-Splunk Enterprise / Splunk Free
+Security Information and Event Management (SIEM) platform for log analysis and detection.
+
+-NxLog
+Log forwarding agent to send Windows Event Logs to Splunk.
+
+-VirtualBox / VMware Workstation
+Virtualization platform to run lab environments.
